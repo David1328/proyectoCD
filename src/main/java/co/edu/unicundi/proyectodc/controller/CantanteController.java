@@ -38,12 +38,12 @@ public class CantanteController {
         return Response.status(Response.Status.CREATED).build();
     }
     
-    /*@Path("cantantes")
+    @Path("cantantes")
     @GET
     public Response obtenerCantantes(){
-        System.out.println("Servicio 2");
+        System.out.println("Servicio para la lista");
         ArrayList<Cantante> lCantantes = new ArrayList<>();
         return Response.status(Response.Status.OK).entity(lCantantes).build();
-    }*/
+    }
     
 }
