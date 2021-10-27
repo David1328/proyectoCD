@@ -15,6 +15,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -52,9 +53,10 @@ public class CantanteController {
         return Response.status(Response.Status.OK).entity(lCantantes).build();
     }
     
-    @Path("eliminarCantante")
+    @Path("eliminarCantante/{idCantante}")
     @DELETE
-    public Response eliminarCantante(){
+    public Response eliminarCantante(@PathParam("idCantante") int id){
+        this.service.elminarCantanteId(id);
         return Response.status(Response.Status.NO_CONTENT).build();
     }
     @Path("actualizarCantante")
@@ -62,10 +64,11 @@ public class CantanteController {
     public Response actualizarCantante(){
         return Response.status(Response.Status.OK).build();
     }
-    @Path("canantentePorId")
+    @Path("cantantePorId/{idCantante}")
     @GET
-    public Response buscarCantantePorId(){
-        return Response.status(Response.Status.OK).build();
+    public Response buscarCantantePorId(@PathParam("idCantante")int idCantante){
+        this.service.listarCantantePorId(idCantante);
+        return Response.status(Response.Status.OK).entity(this.service.listarCantantePorId(idCantante)).build();
     }
     
 }
