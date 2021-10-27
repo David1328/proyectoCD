@@ -7,11 +7,13 @@ package co.edu.unicundi.proyectodc.controller;
 
 import co.edu.unicundi.proyectocdejb.service.ICantanteService;
 import co.edu.unicundi.proyectocdejb.enity.Cantante;
-import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -33,17 +35,37 @@ public class CantanteController {
     @Path("agregarCantante")
     @POST
     public Response ingresarCantante(Cantante nuevo){
+        
         this.service.agregar(nuevo);
         System.out.println("Ingreso Primer servicio");
-        return Response.status(Response.Status.CREATED).build();
+        return Response.status(Response.Status.OK).build();
+        //return Response.status(Response.Status.CREATED).build();
     }
     
     @Path("cantantes")
     @GET
     public Response obtenerCantantes(){
         System.out.println("Servicio para la lista");
-        ArrayList<Cantante> lCantantes = new ArrayList<>();
+        List<Cantante> lCantantes;
+        lCantantes =  this.service.listarCantantes();
+        System.out.println("primer"+lCantantes.get(0).getNombre());
         return Response.status(Response.Status.OK).entity(lCantantes).build();
+    }
+    
+    @Path("eliminarCantante")
+    @DELETE
+    public Response eliminarCantante(){
+        return Response.status(Response.Status.NO_CONTENT).build();
+    }
+    @Path("actualizarCantante")
+    @PUT
+    public Response actualizarCantante(){
+        return Response.status(Response.Status.OK).build();
+    }
+    @Path("canantentePorId")
+    @GET
+    public Response buscarCantantePorId(){
+        return Response.status(Response.Status.OK).build();
     }
     
 }
