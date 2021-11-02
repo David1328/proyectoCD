@@ -61,7 +61,8 @@ public class CantanteController {
     }
     @Path("actualizarCantante")
     @PUT
-    public Response actualizarCantante(){
+    public Response actualizarCantante(Cantante cantanteActualizar){
+        this.service.actualizarCantante(cantanteActualizar);
         return Response.status(Response.Status.OK).build();
     }
     @Path("cantantePorId/{idCantante}")
