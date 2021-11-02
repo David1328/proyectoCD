@@ -5,6 +5,7 @@
  */
 package co.edu.unicundi.proyectodc.controller;
 
+import co.edu.unicundi.proyectocdejb.enity.AlbumCantante;
 import co.edu.unicundi.proyectocdejb.service.ICantanteService;
 import co.edu.unicundi.proyectocdejb.enity.Cantante;
 import java.util.List;
@@ -51,6 +52,7 @@ public class CantanteController {
         lCantantes =  this.service.listarCantantes();
         System.out.println("primer"+lCantantes.get(0).getNombre());
         return Response.status(Response.Status.OK).entity(lCantantes).build();
+        
     }
     
     @Path("eliminarCantante/{idCantante}")
@@ -72,4 +74,13 @@ public class CantanteController {
         return Response.status(Response.Status.OK).entity(this.service.listarCantantePorId(idCantante)).build();
     }
     
+    @Path("album")
+    @GET
+    public Response buscarCantantePorIdlistarAlbumCantantes(){
+         System.out.println("Servicio para la lista");
+        List<AlbumCantante> lCantantes;
+        lCantantes =  this.service.listarAlbumCantantes();
+        System.out.println("primer"+lCantantes.get(0).getNombre());
+        return Response.status(Response.Status.OK).entity(lCantantes).build();
+    }
 }
