@@ -8,6 +8,7 @@ package co.edu.unicundi.proyectodc.controller;
 import co.edu.unicundi.proyectocdejb.enity.AlbumCantante;
 import co.edu.unicundi.proyectocdejb.service.ICantanteService;
 import co.edu.unicundi.proyectocdejb.enity.Cantante;
+import co.edu.unicundi.proyectocdejb.exception.RecursoNoEncontrado;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -36,7 +37,7 @@ public class CantanteController {
     
     @Path("agregarCantante")
     @POST
-    public Response ingresarCantante(Cantante nuevo){
+    public Response ingresarCantante(Cantante nuevo) throws RecursoNoEncontrado{
         
         this.service.agregar(nuevo);
         System.out.println("Ingreso Primer servicio");
@@ -57,7 +58,7 @@ public class CantanteController {
     
     @Path("eliminarCantante/{idCantante}")
     @DELETE
-    public Response eliminarCantante(@PathParam("idCantante") int id){
+    public Response eliminarCantante(@PathParam("idCantante") int id) throws RecursoNoEncontrado{
         this.service.elminarCantanteId(id);
         return Response.status(Response.Status.NO_CONTENT).build();
     }
@@ -69,8 +70,7 @@ public class CantanteController {
     }
     @Path("cantantePorId/{idCantante}")
     @GET
-    public Response buscarCantantePorId(@PathParam("idCantante")int idCantante){
-        this.service.listarCantantePorId(idCantante);
+    public Response buscarCantantePorId(@PathParam("idCantante")String idCantante){
         return Response.status(Response.Status.OK).entity(this.service.listarCantantePorId(idCantante)).build();
     }
     

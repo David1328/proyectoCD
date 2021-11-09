@@ -31,6 +31,7 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(co.edu.unicundi.proyectocdejb.exception.ExceptionHandler.class);
         resources.add(co.edu.unicundi.proyectodc.controller.CantanteController.class);
+        resources.add(co.edu.unicundi.proyectodc.controller.DiscoController.class);
     }
     
 }
