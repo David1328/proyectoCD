@@ -7,6 +7,7 @@ package co.edu.unicundi.proyectodc.controller;
 
 import co.edu.unicundi.proyectocdejb.enity.Disco;
 import co.edu.unicundi.proyectocdejb.service.IDiscoService;
+
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -40,6 +41,7 @@ public class DiscoController {
     @POST
     public Response agregarDisco(Disco nuevoDisco){
         System.out.println("Servicio para agregar Disco");
+        this.service.agregarDisco(nuevoDisco);
         return Response.status(Response.Status.CREATED).build();
     }
     
