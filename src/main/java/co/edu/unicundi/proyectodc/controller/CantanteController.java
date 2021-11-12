@@ -6,9 +6,9 @@
 package co.edu.unicundi.proyectodc.controller;
 
 import co.edu.unicundi.proyectocdejb.enity.AlbumCantante;
+import co.edu.unicundi.proyectocdejb.exception.RecursoNoEncontrado;
 import co.edu.unicundi.proyectocdejb.service.ICantanteService;
 import co.edu.unicundi.proyectocdejb.enity.Cantante;
-import co.edu.unicundi.proyectocdejb.exception.RecursoNoEncontrado;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -51,7 +51,6 @@ public class CantanteController {
         System.out.println("Servicio para la lista");
         List<Cantante> lCantantes;
         lCantantes =  this.service.listarCantantes();
-        System.out.println("primer"+lCantantes.get(0).getNombre());
         return Response.status(Response.Status.OK).entity(lCantantes).build();
         
     }
