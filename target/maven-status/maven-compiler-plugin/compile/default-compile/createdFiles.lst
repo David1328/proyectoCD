@@ -1,3 +1,5 @@
-co\edu\unicundi\proyectodc\controller\DiscoController.class
 co\edu\unicundi\proyectodc\controller\CantanteController.class
 org\netbeans\rest\application\config\ApplicationConfig.class
+co\edu\unicundi\proyectodc\controller\DiscoController.class
+co\edu\unicundi\proyectodc\controller\CancionController.class
+co\edu\unicundi\proyectodc\controller\VentaController.class
