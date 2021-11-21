@@ -20,7 +20,7 @@ import javax.ws.rs.core.Response;
  *
  * @author asantibo
  */
-@Path("ventaService")
+@Path("venta")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class VentaController {

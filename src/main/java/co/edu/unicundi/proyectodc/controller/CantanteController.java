@@ -26,7 +26,7 @@ import javax.ws.rs.core.Response;
  *
  * @author David
  */
-@Path("cantanteService")
+@Path("cantante")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class CantanteController {

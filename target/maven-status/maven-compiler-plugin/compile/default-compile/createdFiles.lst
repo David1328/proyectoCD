@@ -1,6 +1,8 @@
 co\edu\unicundi\proyectodc\controller\CantanteController.class
 org\netbeans\rest\application\config\ApplicationConfig.class
+co\edu\unicundi\proyectodc\controller\LoginController.class
+co\edu\unicundi\proyectodc\controller\CancionController.class
+co\edu\unicundi\proyectodc\controller\AdminController.class
 co\edu\unicundi\proyectodc\controller\DiscoController.class
 org\netbeans\rest\application\config\CorsFilter.class
-co\edu\unicundi\proyectodc\controller\CancionController.class
 co\edu\unicundi\proyectodc\controller\VentaController.class

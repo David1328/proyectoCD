@@ -22,7 +22,7 @@ import javax.ws.rs.core.Response;
  *
  * @author David
  */
-@Path("discoService")
+@Path("disco")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class DiscoController {

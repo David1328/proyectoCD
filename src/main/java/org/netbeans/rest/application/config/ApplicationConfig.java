@@ -33,6 +33,7 @@ public class ApplicationConfig extends Application {
         resources.add(co.edu.unicundi.proyectodc.controller.CancionController.class);
         resources.add(co.edu.unicundi.proyectodc.controller.CantanteController.class);
         resources.add(co.edu.unicundi.proyectodc.controller.DiscoController.class);
+        resources.add(co.edu.unicundi.proyectodc.controller.LoginController.class);
         resources.add(co.edu.unicundi.proyectodc.controller.VentaController.class);
         resources.add(org.netbeans.rest.application.config.CorsFilter.class);
     }

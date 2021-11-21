@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
  *
  * @author asantibo
  */
-@Path("cancionService")
+@Path("cancion")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class CancionController {
