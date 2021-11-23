@@ -14,6 +14,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -52,4 +53,14 @@ public class DiscoController {
         System.out.println("ActualizarDatos");
         return Response.status(Response.Status.OK).build();
     }
+    
+    
+    @Path("obtenerDiscosId/{artista_productor}")
+    @GET
+    public Response obtenerDiscoPorId(@PathParam("artista_productor") int artista_productor){
+        
+        System.out.println("Ingreso por el id"+artista_productor);
+        return Response.ok().entity(this.service.listarPorId(artista_productor)).build();
+    }
+    
 }
