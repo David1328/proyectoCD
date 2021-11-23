@@ -27,7 +27,7 @@ public class VentaController {
 
     @EJB
     private IVentaService service;
-    
+
     @Path("agregarVenta")
     @POST
     public Response registrarventa(Venta nuevo) throws RecursoNoEncontrado {
@@ -36,6 +36,14 @@ public class VentaController {
         System.out.println("Registro de venta servicio");
         return Response.status(Response.Status.CREATED).build();
     }
-    
-    
+
+    @Path("agregarAlCarrito")
+    @POST
+    public Response datosagregarAlCarrito(Venta nuevo) throws RecursoNoEncontrado {
+        Object obj = new Object();
+        obj = this.service.agregarCarrito(nuevo);
+        System.out.println("Registro de agregar al carrito");
+        return Response.status(Response.Status.OK).entity(obj).build();
+    }
+
 }
