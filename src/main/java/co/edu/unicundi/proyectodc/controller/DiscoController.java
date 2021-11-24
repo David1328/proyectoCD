@@ -57,9 +57,9 @@ public class DiscoController {
     
     @Path("obtenerDiscosId/{artista_productor}")
     @GET
-    public Response obtenerDiscoPorId(@PathParam("artista_productor") int artista_productor){
+    public Response obtenerDiscoPorId(@PathParam("artista_productor") String artista_productor){
         
-        System.out.println("Ingreso por el id"+artista_productor);
+        System.out.println("Ingreso por el id "+artista_productor);
         return Response.ok().entity(this.service.listarPorId(artista_productor)).build();
     }
     

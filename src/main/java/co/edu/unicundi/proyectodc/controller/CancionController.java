@@ -39,7 +39,14 @@ public class CancionController {
         System.out.println("Ingreso de cancion servicio");
         return Response.status(Response.Status.CREATED).build();
     }
-
+    
+    @Path("listarCanciones")
+    @GET
+    public Response litarCanciones() throws RecursoNoEncontrado{
+        return Response.ok().entity(this.service.listarCanciones()).build();
+    }
+    
+    
     @Path("listarCancionPorArtistaAutor/{artista_productor}")
     @GET
     public Response listarCancionPorArtistaAutor(@PathParam("artista_productor") String artista_productor) throws RecursoNoEncontrado {

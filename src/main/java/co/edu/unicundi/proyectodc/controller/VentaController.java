@@ -10,8 +10,10 @@ import co.edu.unicundi.proyectocdejb.exception.RecursoNoEncontrado;
 import co.edu.unicundi.proyectocdejb.service.IVentaService;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -31,19 +33,19 @@ public class VentaController {
     @Path("agregarVenta")
     @POST
     public Response registrarventa(Venta nuevo) throws RecursoNoEncontrado {
-
         this.service.agregar(nuevo);
         System.out.println("Registro de venta servicio");
         return Response.status(Response.Status.CREATED).build();
     }
 
-    @Path("agregarAlCarrito")
-    @POST
-    public Response datosagregarAlCarrito(Venta nuevo) throws RecursoNoEncontrado {
-        Object obj = new Object();
-        obj = this.service.agregarCarrito(nuevo);
-        System.out.println("Registro de agregar al carrito");
-        return Response.status(Response.Status.OK).entity(obj).build();
+    @Path("obtenerTarifaCompra/{idTipoProducto}/{idProducto}")
+    @GET
+    public Response datosagregarAlCarrito(@PathParam("idTipoProducto") int idTipoPoducto,
+            @PathParam("idProducto") int idProducto) throws RecursoNoEncontrado {
+        
+        System.out.println("Id tipo de producto "+idTipoPoducto+
+                " idproducto "+ idProducto);
+        return Response.ok().entity(this.service.obtenerTarifa(idTipoPoducto, idProducto)).build();
     }
 
 }
