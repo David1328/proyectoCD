@@ -45,6 +45,7 @@ public class VentaController {
         /*obj = this.service.agregarCarrito(nuevo);*/
         System.out.println("Registro de agregar al carrito");
         return Response.status(Response.Status.OK).entity(obj).build();
+    }
     @Path("obtenerTarifaCompra/{idTipoProducto}/{idProducto}")
     @GET
     public Response datosagregarAlCarrito(@PathParam("idTipoProducto") int idTipoPoducto,
