@@ -9,8 +9,6 @@ import co.edu.unicundi.proyectocdejb.dto.TokenDto;
 import co.edu.unicundi.proyectocdejb.enity.Admin;
 import co.edu.unicundi.proyectocdejb.enity.AuditoriaToken;
 import co.edu.unicundi.proyectocdejb.exception.ExceptionNoAutorizado;
-import co.edu.unicundi.proyectocdejb.exception.RecursoNoEncontrado;
-import co.edu.unicundi.proyectocdejb.repository.IAuditoriaTokenRepo;
 import co.edu.unicundi.proyectocdejb.service.IAdminService;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;

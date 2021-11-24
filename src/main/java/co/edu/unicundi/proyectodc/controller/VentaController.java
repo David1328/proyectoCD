@@ -41,7 +41,7 @@ public class VentaController {
     @POST
     public Response datosagregarAlCarrito(Venta nuevo) throws RecursoNoEncontrado {
         Object obj = new Object();
-        obj = this.service.agregarCarrito(nuevo);
+        /*obj = this.service.agregarCarrito(nuevo);*/
         System.out.println("Registro de agregar al carrito");
         return Response.status(Response.Status.OK).entity(obj).build();
     }
