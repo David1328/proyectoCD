@@ -41,7 +41,7 @@ public class CantanteController {
         
         this.service.agregar(nuevo);
         System.out.println("Ingreso Primer servicio");
-        return Response.status(Response.Status.OK).build();
+        return Response.status(Response.Status.OK).entity("Cantante Agregado").build();
         //return Response.status(Response.Status.CREATED).build();
     }
     

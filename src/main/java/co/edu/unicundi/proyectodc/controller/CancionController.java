@@ -37,7 +37,7 @@ public class CancionController {
 
         this.service.agregar(nuevo);
         System.out.println("Ingreso de cancion servicio");
-        return Response.status(Response.Status.CREATED).build();
+        return Response.status(Response.Status.CREATED).entity("Se ingreso una cancion").build();
     }
     
     @Path("listarCanciones")
